@@ -1,9 +1,14 @@
-const Coin = () => {
+// eslint-disable-next-line react/prop-types
+const Coin = ({ key, name, image }) => {
+  console.log(name);
   return (
     <>
-      <div className="flex w-36 flex-col items-center justify-center">
-        <h2>logo</h2>
-        <h2>Bitcoin</h2>
+      <div
+        key={key}
+        className="flex flex-col items-center justify-center rounded-xl border-4 border-white shadow-lg shadow-white md:w-44"
+      >
+        <img src={image} alt={name} />
+        <h2>{name}</h2>
         <h2>$708.22</h2>
       </div>
     </>
