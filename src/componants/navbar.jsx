@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <header>
       <nav className="">
-        <div className="flex items-center justify-around overflow-hidden pt-12 md:justify-between md:px-16">
+        <div className="flex items-center justify-around overflow-hidden pt-8 md:justify-between md:px-16 md:pt-12">
           <div className="z-50 flex flex-col items-center justify-center">
             <h1 className="md:text-2xl">Cryptocurrency</h1>
             <span className="mt-[-15px] text-blue-300">CheckYourMoney</span>
