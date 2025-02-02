@@ -28,7 +28,7 @@ export const fetchCoinsDetails = createAsyncThunk(
 
 export const fetchCoinsHistory = createAsyncThunk(
   "crypto/fetchCoinsHistory",
-  async (id, days) => {
+  async ({ id, days }) => {
     const { data } = await axios.get(`${API_URL}/coins/${id}/market_chart`, {
       params: {
         vs_currency: "usd",
@@ -41,7 +41,7 @@ export const fetchCoinsHistory = createAsyncThunk(
 
 const initialState = {
   allCoins: [],
-  sellectedCoin: null,
+  selectedCoin: null,
   coinHistory: [],
   status: "idle",
   error: null,
@@ -66,7 +66,7 @@ const cryptoSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(fetchCoinsDetails.fulfilled, (state, action) => {
-        state.sellectedCoin = action.payload;
+        state.selectedCoin = action.payload;
       })
       .addCase(fetchCoinsHistory.fulfilled, (state, action) => {
         state.coinHistory = action.payload;
