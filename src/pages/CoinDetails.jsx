@@ -1,18 +1,20 @@
 import { useSelector } from "react-redux";
 import CoinChart from "../componants/coinChart";
+import Loader from "../Ui/loader/Loader";
+import Error from "../Ui/Error";
 
 const CoinDetails = () => {
   const { status } = useSelector((state) => state.crypto);
   if (status === "loading")
     return (
       <>
-        <div>loading</div>
+        <Loader />
       </>
     );
   if (status === "failed")
     return (
       <>
-        <div>Error, please refresh the page</div>
+        <Error />
       </>
     );
   return (

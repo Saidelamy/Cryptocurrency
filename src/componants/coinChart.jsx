@@ -67,9 +67,6 @@ const CoinChart = () => {
     ],
   };
 
-  // console.log(coinHistory);
-  console.log(selectedCoin);
-
   return (
     <>
       <div className="grid grid-cols-12">
@@ -95,33 +92,33 @@ const CoinChart = () => {
               </div>
             </div>
           </div>
-          <div className="mt-5 bg-[rgba(0,0,0,.5)]">
+          <div className="mt-5 bg-[rgba(0,0,0,0.5)]">
             <div>
               <Line data={data} options={{ responsive: true }} />
             </div>
-            <div className="grid grid-cols-2 justify-between md:flex">
-              <div className="flex flex-col items-center">
-                <span>Price</span>
-                <span>${selectedCoin?.market_data?.current_price?.usd}</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span>Volume</span>
-                <span>
-                  ${formatNumber(selectedCoin?.market_data?.total_volume?.usd)}
-                </span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span>Market Cap</span>
-                <span>
-                  ${formatNumber(selectedCoin?.market_data?.market_cap?.usd)}
-                </span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span>Total Supply</span>
-                <span>
-                  ${formatNumber(selectedCoin?.market_data?.total_supply)}
-                </span>
-              </div>
+          </div>
+          <div className="mt-2 flex justify-between gap-y-2 max-sm:flex-col">
+            <div className="flex items-center justify-around md:flex-col">
+              <span>Price</span>
+              <span>${selectedCoin?.market_data?.current_price?.usd}</span>
+            </div>
+            <div className="flex items-center justify-around md:flex-col">
+              <span>Volume</span>
+              <span>
+                ${formatNumber(selectedCoin?.market_data?.total_volume?.usd)}
+              </span>
+            </div>
+            <div className="flex items-center justify-around md:flex-col">
+              <span>Market Cap</span>
+              <span>
+                ${formatNumber(selectedCoin?.market_data?.market_cap?.usd)}
+              </span>
+            </div>
+            <div className="flex items-center justify-around md:flex-col">
+              <span>Total Supply</span>
+              <span>
+                ${formatNumber(selectedCoin?.market_data?.total_supply)}
+              </span>
             </div>
           </div>
         </div>

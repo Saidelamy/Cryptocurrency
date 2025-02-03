@@ -35,10 +35,10 @@ const Home = () => {
     <>
       <div className="">
         <main>
-          <div className="mt-12 gap-3 px-3 md:grid-cols-5 md:px-16 md:text-2xl">
-            <div className="bg-[rgba(0,0,0,.4)] p-2">
+          <div className="mt-12 gap-3 px-3 text-xs md:grid-cols-5 md:px-16 md:text-2xl">
+            <div className="rounded-4xl bg-[rgba(24,68,57,0.3)] p-4">
               <table className="w-full">
-                <thead className="border-b">
+                <thead className="border-b border-b-[rgba(87,255,213,0.3)]">
                   <tr className="">
                     <th>#</th>
                     <th>Coins</th>
