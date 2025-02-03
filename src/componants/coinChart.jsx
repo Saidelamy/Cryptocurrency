@@ -21,6 +21,7 @@ import {
   Filler,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import { formatNumber } from "../utility/numberFormat";
 
 ChartJS.register(
   CategoryScale,
@@ -66,19 +67,20 @@ const CoinChart = () => {
     ],
   };
 
-  console.log(coinHistory);
+  // console.log(coinHistory);
   console.log(selectedCoin);
+
   return (
     <>
       <div className="grid grid-cols-12">
-        <div className="order-2 col-span-12 md:order-1 md:col-span-8">
+        <div className="order-2 col-span-12 mt-4 md:order-1 md:col-span-8">
           <div className="justify-between md:flex">
             <div className="flex items-center">
               <img src={selectedCoin?.image?.small} alt={selectedCoin?.name} />
               <h1 className="ml-2 text-2xl">{selectedCoin?.name}</h1>
               <p className="mt-1 ml-1">{selectedCoin?.symbol}</p>
             </div>
-            <div className="gap-6 md:flex">
+            <div className="hidden gap-6 md:flex">
               <div className="flex items-center gap-1">
                 <IoStarOutline className="text-cyan-500" />
                 <span>Add To Watchlist</span>
@@ -94,7 +96,33 @@ const CoinChart = () => {
             </div>
           </div>
           <div className="mt-5 bg-[rgba(0,0,0,.5)]">
-            <Line data={data} options={{ responsive: true }} />
+            <div>
+              <Line data={data} options={{ responsive: true }} />
+            </div>
+            <div className="grid grid-cols-2 justify-between md:flex">
+              <div className="flex flex-col items-center">
+                <span>Price</span>
+                <span>${selectedCoin?.market_data?.current_price?.usd}</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span>Volume</span>
+                <span>
+                  ${formatNumber(selectedCoin?.market_data?.total_volume?.usd)}
+                </span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span>Market Cap</span>
+                <span>
+                  ${formatNumber(selectedCoin?.market_data?.market_cap?.usd)}
+                </span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span>Total Supply</span>
+                <span>
+                  ${formatNumber(selectedCoin?.market_data?.total_supply)}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
         <div className="order-1 col-span-12 flex justify-center md:order-2 md:col-span-4">

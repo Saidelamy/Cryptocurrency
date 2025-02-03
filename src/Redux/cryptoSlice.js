@@ -1,16 +1,20 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "https://api.coingecko.com/api/v3";
+const API_URL = "/api";
 
 export const fetchAllCoins = createAsyncThunk(
   "crypto/fetchAllCoins",
-  async (page) => {
+  async (page, { getState }) => {
+    const cachedData = getState().crypto.allCoins;
+    if (cachedData && cachedData.length > 0) {
+      return cachedData;
+    }
     const { data } = await axios.get(`${API_URL}/coins/markets`, {
       params: {
         vs_currency: "usd",
         order: "market_cap_desc",
-        per_page: 25,
+        per_page: 10,
         page,
       },
     });
@@ -58,7 +62,7 @@ const cryptoSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchAllCoins.fulfilled, (state, action) => {
-        state.status = "succeded";
+        state.status = "succeeded";
         state.allCoins = action.payload;
       })
       .addCase(fetchAllCoins.rejected, (state, action) => {

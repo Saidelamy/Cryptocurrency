@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RiMenuUnfold2Line } from "react-icons/ri";
 import { LuGitPullRequestClosed } from "react-icons/lu";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -11,10 +12,12 @@ const Navbar = () => {
     <header>
       <nav className="">
         <div className="flex items-center justify-around overflow-hidden pt-8 md:justify-between md:px-16 md:pt-12">
-          <div className="z-50 flex flex-col items-center justify-center">
-            <h1 className="md:text-2xl">Cryptocurrency</h1>
-            <span className="mt-[-15px] text-blue-300">CheckYourMoney</span>
-          </div>
+          <NavLink to={"/"}>
+            <div className="z-50 flex flex-col items-center justify-center">
+              <h1 className="md:text-2xl">Cryptocurrency</h1>
+              <span className="mt-[-15px] text-blue-300">CheckYourMoney</span>
+            </div>
+          </NavLink>
           <ul
             className={`${isOpen ? "hidden" : "bg-main absolute top-0 right-0 bottom-0 left-0 flex h-screen flex-col"} items-center justify-end gap-10 md:flex`}
           >
