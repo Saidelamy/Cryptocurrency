@@ -6,7 +6,7 @@ const API_URL = "/api";
 export const fetchAllCoins = createAsyncThunk(
   "crypto/fetchAllCoins",
   async (page, { getState }) => {
-    const cachedData = getState().crypto.allCoins;
+    const cachedData = getState().crypto.allCoins[page];
     if (cachedData && cachedData.length > 0) {
       return cachedData;
     }
@@ -72,8 +72,22 @@ const cryptoSlice = createSlice({
       .addCase(fetchCoinsDetails.fulfilled, (state, action) => {
         state.selectedCoin = action.payload;
       })
+      .addCase(fetchCoinsDetails.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchCoinsDetails.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(fetchCoinsHistory.pending, (state) => {
+        state.status = "loading";
+      })
       .addCase(fetchCoinsHistory.fulfilled, (state, action) => {
         state.coinHistory = action.payload;
+      })
+      .addCase(fetchCoinsHistory.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
       });
   },
 });

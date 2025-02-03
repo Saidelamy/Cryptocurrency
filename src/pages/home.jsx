@@ -3,19 +3,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAllCoins } from "../Redux/cryptoSlice";
 import Coin from "./coin";
 import Pagination from "../componants/Pagination";
-import Loader from "../Ui/loader/Loader";
+import Loader from "../Ui/Loader";
 import Error from "../Ui/Error";
 
 const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 5;
-
   const dispatch = useDispatch();
+
+  const { allCoins } = useSelector((state) => state.crypto);
   useEffect(() => {
     dispatch(fetchAllCoins(currentPage));
   }, [dispatch, currentPage]);
-
-  const { allCoins } = useSelector((state) => state.crypto);
 
   const { status } = useSelector((state) => state.crypto);
   if (status === "loading")
@@ -27,7 +26,9 @@ const Home = () => {
   if (status === "failed")
     return (
       <>
-        <Error />
+        <div className="mt-10">
+          <Error />
+        </div>
       </>
     );
 
@@ -35,12 +36,12 @@ const Home = () => {
     <>
       <div className="">
         <main>
-          <div className="mt-12 gap-3 px-3 text-xs md:grid-cols-5 md:px-16 md:text-2xl">
-            <div className="rounded-4xl bg-[rgba(24,68,57,0.3)] p-4">
+          <div className="mt-12 gap-3 px-3 text-xs md:grid-cols-5 md:px-25 md:text-2xl">
+            <div className="bg-[rgba(72,185,215,.2)] p-4 shadow shadow-cyan-500 md:rounded-4xl">
               <table className="w-full">
-                <thead className="border-b border-b-[rgba(87,255,213,0.3)]">
+                <thead className="border-b border-b-[rgba(87,255,213,0.3)] max-sm:hidden">
                   <tr className="">
-                    <th>#</th>
+                    <th className="py-3">#</th>
                     <th>Coins</th>
                     <th>Price</th>
                     <th>24H Change</th>

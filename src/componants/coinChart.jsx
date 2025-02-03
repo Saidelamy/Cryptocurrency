@@ -22,6 +22,8 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { formatNumber } from "../utility/numberFormat";
+import Loader from "../Ui/Loader";
+import Error from "../Ui/Error";
 
 ChartJS.register(
   CategoryScale,
@@ -67,12 +69,26 @@ const CoinChart = () => {
     ],
   };
 
+  const { status } = useSelector((state) => state.crypto);
+  // if (status === "loading")
+  //   return (
+  //     <>
+  //       <Loader />
+  //     </>
+  //   );
+  if (status === "failed")
+    return (
+      <>
+        <Error />
+      </>
+    );
+
   return (
     <>
       <div className="grid grid-cols-12">
         <div className="order-2 col-span-12 mt-4 md:order-1 md:col-span-8">
           <div className="justify-between md:flex">
-            <div className="flex items-center">
+            <div className="ml-2 flex items-center">
               <img src={selectedCoin?.image?.small} alt={selectedCoin?.name} />
               <h1 className="ml-2 text-2xl">{selectedCoin?.name}</h1>
               <p className="mt-1 ml-1">{selectedCoin?.symbol}</p>
@@ -100,24 +116,26 @@ const CoinChart = () => {
           <div className="mt-2 flex justify-between gap-y-2 max-sm:flex-col">
             <div className="flex items-center justify-around md:flex-col">
               <span>Price</span>
-              <span>${selectedCoin?.market_data?.current_price?.usd}</span>
+              <span className="text-[rgba(72,185,215)]">
+                $ {selectedCoin?.market_data?.current_price?.usd}
+              </span>
             </div>
             <div className="flex items-center justify-around md:flex-col">
               <span>Volume</span>
-              <span>
-                ${formatNumber(selectedCoin?.market_data?.total_volume?.usd)}
+              <span className="text-[rgba(72,185,215)]">
+                $ {formatNumber(selectedCoin?.market_data?.total_volume?.usd)}
               </span>
             </div>
             <div className="flex items-center justify-around md:flex-col">
               <span>Market Cap</span>
-              <span>
-                ${formatNumber(selectedCoin?.market_data?.market_cap?.usd)}
+              <span className="text-[rgba(72,185,215)]">
+                $ {formatNumber(selectedCoin?.market_data?.market_cap?.usd)}
               </span>
             </div>
             <div className="flex items-center justify-around md:flex-col">
               <span>Total Supply</span>
-              <span>
-                ${formatNumber(selectedCoin?.market_data?.total_supply)}
+              <span className="text-[rgba(72,185,215)]">
+                $ {formatNumber(selectedCoin?.market_data?.total_supply)}
               </span>
             </div>
           </div>

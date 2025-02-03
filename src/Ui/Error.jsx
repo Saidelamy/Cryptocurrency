@@ -1,7 +1,7 @@
 function Error() {
   return (
     <div>
-      <div className="flex items-center justify-between border-b border-red-400 bg-red-50 p-4 text-sm text-red-800">
+      <div className="flex items-center justify-between border-b border-yellow-400 bg-yellow-100 p-4 text-sm text-orange-500">
         <div>
           <div className="flex items-center">
             <svg
