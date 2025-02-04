@@ -7,7 +7,6 @@ import {
   IoShareOutline,
   IoCloudDownloadOutline,
 } from "react-icons/io5";
-import { TbTransferVertical } from "react-icons/tb";
 
 import {
   Chart as ChartJS,
@@ -23,7 +22,6 @@ import {
 import { Line } from "react-chartjs-2";
 import { formatNumber } from "../utility/numberFormat";
 import Error from "../Ui/Error";
-import CoinConvert from "./coinConvert";
 
 ChartJS.register(
   CategoryScale,

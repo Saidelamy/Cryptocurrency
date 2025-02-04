@@ -3,7 +3,7 @@ import CoinConvert from "../componants/coinConvert";
 
 const CoinDetails = () => {
   return (
-    <div className="mt-10 grid grid-cols-12 md:px-16">
+    <div className="mt-10 grid grid-cols-12 md:gap-2 md:px-16">
       <div className="order-2 col-span-12 mt-4 md:order-1 md:col-span-8">
         <CoinChart />
       </div>

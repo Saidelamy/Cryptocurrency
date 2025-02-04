@@ -23,7 +23,7 @@ const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
           const pageNumber = index + 1;
           return (
             <button
-              className={`cursor-pointer rounded-lg border-2 border-blue-500 px-2 transition duration-250 hover:scale-125 hover:bg-[rgba(0,0,0,.5)] md:px-5 md:text-2xl ${currentPage === pageNumber && "border-white bg-cyan-800 hover:scale-100 hover:bg-blue-400"}`}
+              className={`cursor-pointer rounded-lg border-2 border-blue-300 px-2 transition duration-250 hover:scale-125 hover:bg-[rgba(0,0,0,.5)] md:px-5 md:text-2xl ${currentPage === pageNumber && "border-white bg-blue-500 hover:scale-100 hover:bg-blue-400"}`}
               key={index}
               onClick={() => handlePageChange(pageNumber)}
             >

@@ -8,10 +8,11 @@ import Error from "../Ui/Error";
 
 const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 5;
   const dispatch = useDispatch();
+  const totalPages = 5;
 
   const { allCoins } = useSelector((state) => state.crypto);
+
   useEffect(() => {
     dispatch(fetchAllCoins(currentPage));
   }, [dispatch, currentPage]);
@@ -37,7 +38,7 @@ const Home = () => {
       <div className="">
         <div className="mt-12 flex flex-col items-center justify-center md:px-20">
           <h1 className="text-4xl md:text-9xl">Crypto Marketplace</h1>
-          <p className="text-center text-cyan-400 md:w-[60%]">
+          <p className="text-center text-blue-300 md:w-[70%]">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint magni
             corporis iure. Maxime qui labore, quisquam expedita asperiores dicta
             tempore ratione consectetur amet beatae distinctio accusantium
