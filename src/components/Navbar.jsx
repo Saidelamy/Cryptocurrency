@@ -3,7 +3,7 @@ import { LuGitPullRequestClosed } from "react-icons/lu";
 import { RiMenuUnfold2Line } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 
-export const Navbar = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(true);
   const toggleMenu = () => {
     setIsOpen((is) => !is);
@@ -36,3 +36,4 @@ export const Navbar = () => {
     </header>
   );
 };
+export default Navbar;
