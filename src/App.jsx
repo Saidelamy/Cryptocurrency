@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import Navbar from "../src/componants/Navbar.jsx";
-import CoinDetails from "./pages/CoinDetails.jsx";
+import Navbar from "./componants/navbar";
+import CoinDetails from "./pages/CoinDetails";
 import Home from "./pages/Home.jsx";
 
 function App() {
