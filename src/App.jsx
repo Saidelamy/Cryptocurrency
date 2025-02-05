@@ -8,7 +8,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route element={<Home />} path="/" />
         <Route element={<CoinDetails />} path="/coinDetails/:id" />
       </Routes>
     </>
