@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllCoins } from "../Redux/cryptoSlice";
 import Coin from "./coin";
-import Pagination from "../components/Pagination";
+import Pagination from "../Components/Pagination";
 import Loader from "../Ui/Loader";
 import Error from "../Ui/Error";
 

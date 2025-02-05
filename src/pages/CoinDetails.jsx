@@ -1,5 +1,5 @@
-import CoinChart from "../components/coinChart";
-import CoinConvert from "../components/coinConvert";
+import CoinChart from "../Components/coinChart";
+import CoinConvert from "../Components/coinConvert";
 
 const CoinDetails = () => {
   return (
