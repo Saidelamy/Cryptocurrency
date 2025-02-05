@@ -1,7 +1,8 @@
-import { TbTransferVertical } from "react-icons/tb";
-import { useSelector } from "react-redux";
-import flag from "../assets/usd.png";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { TbTransferVertical } from "react-icons/tb";
+
+import flag from "../assets/usd.png";
 
 const CoinConvert = () => {
   const { selectedCoin } = useSelector((state) => state.crypto);
