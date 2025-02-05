@@ -6,7 +6,7 @@ import Pagination from "../componants/Pagination";
 import Loader from "../Ui/Loader";
 import Error from "../Ui/Error";
 
-export default function Home() {
+const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const dispatch = useDispatch();
   const totalPages = 5;
@@ -89,4 +89,6 @@ export default function Home() {
       </div>
     </>
   );
-}
+};
+
+export default Home;
