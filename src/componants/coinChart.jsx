@@ -52,6 +52,7 @@ const CoinChart = () => {
   const { selectedCoin } = useSelector((state) => state.crypto);
   const { coinHistory } = useSelector((state) => state.crypto);
 
+  // chart
   const data = {
     labels: coinHistory?.prices?.map(
       (coin) => new Date(coin[0]).toLocaleDateString() || {},
