@@ -18,7 +18,7 @@ function Error() {
             </svg>
             <p>
               <span className="font-bold">Info:</span>
-              Error, please refresh the page
+              Somthing wrong, please refresh the page
             </p>
           </div>
         </div>
