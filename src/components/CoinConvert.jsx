@@ -9,6 +9,7 @@ const CoinConvert = () => {
   const { selectedCoin } = useSelector((state) => state.crypto);
   const amountAllCoins =
     amount * (selectedCoin?.market_data?.current_price?.usd ?? 0);
+
   return (
     <div className="flex justify-center md:mt-[104px]">
       <div className="flex flex-col justify-center gap-2 bg-[rgba(0,0,0,.5)] p-4 md:gap-5">
