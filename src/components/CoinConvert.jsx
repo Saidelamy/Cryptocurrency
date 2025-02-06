@@ -5,8 +5,8 @@ import { TbTransferVertical } from "react-icons/tb";
 import flag from "../assets/usd.png";
 
 const CoinConvert = () => {
-  const { selectedCoin } = useSelector((state) => state.crypto);
   const [amount, setAmount] = useState(1);
+  const { selectedCoin } = useSelector((state) => state.crypto);
 
   return (
     <div className="flex justify-center md:mt-[104px]">
@@ -18,7 +18,7 @@ const CoinConvert = () => {
               <img
                 className="h-4 w-4 md:h-6 md:w-6"
                 src={selectedCoin?.image.small}
-                alt=""
+                alt={selectedCoin?.name}
               />
               {selectedCoin?.symbol.toUpperCase()}
             </div>
