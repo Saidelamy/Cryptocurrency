@@ -7,7 +7,8 @@ import flag from "../assets/usd.png";
 const CoinConvert = () => {
   const [amount, setAmount] = useState(1);
   const { selectedCoin } = useSelector((state) => state.crypto);
-
+  const amountAllCoins =
+    amount * (selectedCoin?.market_data?.current_price?.usd ?? 0);
   return (
     <div className="flex justify-center md:mt-[104px]">
       <div className="flex flex-col justify-center gap-2 bg-[rgba(0,0,0,.5)] p-4 md:gap-5">
@@ -47,7 +48,7 @@ const CoinConvert = () => {
               <input
                 type="number"
                 placeholder="enter number of coins"
-                value={amount * selectedCoin?.market_data?.current_price?.usd}
+                value={isNaN(amountAllCoins) ? "" : amountAllCoins}
                 className="px-6 text-end outline-none md:px-12 md:py-2"
                 disabled
               />
