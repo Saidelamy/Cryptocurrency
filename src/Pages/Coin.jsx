@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import { formatNumber } from "../utility/numberFormat";
 import { IoIosArrowRoundUp, IoIosArrowRoundDown } from "react-icons/io";
+import { formatNumber } from "../utility/numberFormat";
 
 const Coin = ({
   id,
