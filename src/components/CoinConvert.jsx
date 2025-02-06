@@ -7,6 +7,7 @@ import flag from "../assets/usd.png";
 const CoinConvert = () => {
   const [amount, setAmount] = useState(1);
   const { selectedCoin } = useSelector((state) => state.crypto);
+
   const amountAllCoins =
     amount * (selectedCoin?.market_data?.current_price?.usd ?? 0);
 

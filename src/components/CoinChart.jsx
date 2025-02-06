@@ -49,10 +49,8 @@ const CoinChart = () => {
     dispatch(fetchCoinsDetails(id));
   }, [dispatch, id]);
 
-  const { selectedCoin } = useSelector((state) => state.crypto);
-  const { coinHistory } = useSelector((state) => state.crypto);
-
   // chart
+  const { coinHistory } = useSelector((state) => state.crypto);
   const data = {
     labels: coinHistory?.prices?.map(
       (coin) => new Date(coin[0]).toLocaleDateString() || {},
@@ -68,6 +66,7 @@ const CoinChart = () => {
     ],
   };
 
+  const { selectedCoin } = useSelector((state) => state.crypto);
   const { status } = useSelector((state) => state.crypto);
 
   if (status === "failed")
