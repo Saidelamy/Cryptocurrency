@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "/api";
+const API_URL = "https://api.coingecko.com/api/v3";
 
 export const fetchAllCoins = createAsyncThunk(
   "crypto/fetchAllCoins",

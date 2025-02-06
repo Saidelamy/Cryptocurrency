@@ -5,13 +5,4 @@ import eslint from "vite-plugin-eslint";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), eslint()],
-  server: {
-    proxy: {
-      "/api": {
-        target: "https://api.coingecko.com/api/v3",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
-      },
-    },
-  },
 });
