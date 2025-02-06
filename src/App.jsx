@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./Components/Navbar";
-import Home from "./Pages/Home";
-import CoinDetails from "./Pages/CoinDetails";
+import Navbar from "./Components/Navbar.jsx";
+import Home from "./Pages/Home.jsx";
+import CoinDetails from "./Pages/CoinDetails.jsx";
 
 function App() {
   return (
