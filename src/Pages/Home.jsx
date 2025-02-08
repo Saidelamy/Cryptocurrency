@@ -42,7 +42,7 @@ const Home = () => {
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint magni
             corporis iure. Maxime qui labore, quisquam expedita asperiores dicta
             tempore ratione consectetur amet beatae distinctio accusantium
-            laudantium debitis.
+            laudantium debitis. Lorem.
           </p>
         </div>
         <main>
